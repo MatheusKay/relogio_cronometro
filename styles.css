@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.fundo__container {
+    height: 100vh;
+    background-image: url(imagens/1319567\ 1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/*Reultilização*/
+
+.frente__buttons__button,
+.frente__relogio,
+.frente__cronometro,
+.back__container,
+.form-atras__data__numbers__number,
+.form-atras__button {
+    background-color: #cccccc3b;
+}
+
+.frente__relogio,
+.frente__cronometro,
+.form-atras__resultado {
+    box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.9)
+}
+
+.frente__buttons__button,
+.frente__relogio,
+.frente__cronometro,
+.back__container,
+.form-atras__data__numbers__number,
+.form-atras__button,
+.form-atras__resultado,
+.frente__relogio__number {
+    border-radius: 12px;
+}
+
+
+.frente__cronometro__relogio,
+.frente__cronometro__number__mile-segundos,
+.frente__cronometro__buttons,
+.frente__cronometro__buttons__button,
+.frente__cronometro__number,
+.form-atras__resultado{
+    background-color: transparent;
+}
+
+/*Main do site/Rotação card*/
+#switch:checked ~ .flip-container .flipper {
+	transform: rotateY(180deg);
+} 
+
+.flipper{
+	width: 100%;
+	height: 100%;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+.flipper{
+	position: relative;
+}
+
+.front, .back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.back{
+	transform: rotateY(180deg);
+}
+
+.front, .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.form-titulo {
+    font-size: 18px;
+}
+
+.form-frent {
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.form-frent--is-active {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+}
+
+/*Main do site/Css do relogio*/
+
+.option {
+    padding-top: 5%;
+    margin-bottom: 2%;
+    text-align: center;
+    font-size: 24px;
+}
+
+.option--is-active {
+    margin: 0 52px;
+}
+
+.virar {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+
+/* Estilizando o switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 34px;
+}
+
+.switch input.virar {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 4em;
+    margin: 0 auto;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: .4s;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #000; 
+}   
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.frente,
+.back {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.frente__buttons {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.frente__buttons__button {
+    padding: 16px;
+    margin: 0 16px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.frente__relogio {
+    width: 50%;
+    margin: 0 auto;
+    padding: 16px;
+    border: 2px solid #fff;
+    
+}
+
+.frente__relogio__number {
+    padding: 16px 2px;
+    font-size: 36px;
+}
+
+.frente__relogio__number__small {
+    font-size: 16px;
+}
+
+/*Main do site/Css do cronometro*/
+
+.frente__cronometro {
+    width: 50%;
+    padding: 16px 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column-reverse;
+    border: 2px solid #fff;
+}
+
+.frente__cronometro__buttons {
+    border-top: 1.5px solid #fff;
+    margin-top: 24px;
+}
+
+.frente__cronometro__buttons__button {
+    padding: 12px;
+    margin-left: 8px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+}
+
+.frente__cronometro__number {
+    font-size: 36px;
+}
+
+/*Main do site/Css do calcule aniversario*/
+
+.back__title {
+    padding-top: 16px;
+}
+
+.back__container {
+    width: 70%;
+    margin: -32px auto;
+    border: 2px solid;
+}
+
+.form-atras__datas {
+    width: 100%;
+    margin: 7% auto;
+    display: flex;
+    justify-content: center;
+}
+
+.form-atras__data__numbers {
+    width: 12%;
+    margin: 0 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-atras__data__numbers__number {
+    height: 70px;
+    padding: 8px;
+    margin-top: 10%;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #000;
+    font-size: 24px;
+    text-align: center;
+}
+
+.form-atras__data__numbers__number:focus,
+.form-atras__data__numbers__number:active {
+    outline: none;
+    box-shadow: none;
+    border-bottom: 2px solid #fff;
+}
+
+.form-atras__data__numbers__number::-webkit-inner-spin-button,
+.form-atras__data__numbers__number::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-atras__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-atras__button {
+    width: 20%;
+    margin: 0 auto;
+    padding: 16px;
+    border: none;
+    border-bottom: 2px solid;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.form-atras__resultado {
+    width: 50%;
+    margin: 5% auto;
+    padding: 16px;
+    border: 2px solid;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+@media screen and (max-width: 767px) {
+    .option {
+        padding-top: 15%;
+        margin-bottom: 5%;
+    }
+    
+    .slider {
+        width: 4em;
+    }
+
+    .frente__buttons {
+        margin-top: 64px;
+    }
+
+    .frente__relogio,
+    .frente__cronometro,
+    .back__container {
+        width: 80%;
+    }
+
+    /*AniverTime*/
+
+    .back__title {
+        font-size: 1.3em;
+    }
+
+    .form-atras__data__numbers {
+        width: 50%;
+    }
+
+    .form-atras__data__numbers__number {
+        width: 100%;
+        margin-right: 16px;
+    }
+
+    .form-atras__button {
+        width: 45%;
+    }
+
+    .form-atras__resultado {
+        width: 90%;
+        margin-top: 7%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .option {
+        padding-top: 15%;
+    }
+    
+    .slider {
+        width: 4em;
+    }
+
+    /*AniverTime*/
+
+    .form-atras__data__numbers {
+        width: 20%;
+    }
+
+    .form-atras__button {
+        width: 30%;
+    }
+
+    .form-atras__resultado {
+        width: 90%;
+    }
+}

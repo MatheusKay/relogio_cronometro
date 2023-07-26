@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="fundo__container">
+        <main class="form-check">
+            <div class="container">
+                <div class="option">
+                    <span class="option--is-active">Relógio</span>
+                    <span>AniverTime</span>
+                </div>
+                <label class="switch" for="switch">
+                    <input class="virar" type="checkbox" id="switch">
+                    <span class="slider"></span>
+                    <div class="flip-container" for="switch" >
+                        <div class="flipper">
+                        <section class="front">
+                            <div class="frente">
+                                <nav class="frente__buttons">
+                                    <button class="frente__buttons__button" data-tab-button="relogio_aba">Relógio</button>
+                                    <button class="frente__buttons__button" data-tab-button="cronometro_aba">Cronômetro</button>
+                                </nav>
+                                <div data-tab-id="relogio_aba" class="form-frent form-frent--is-active">
+                                    <div class="frente__relogio">
+                                        <span class="frente__relogio__number" id="horas"></span>
+                                        <span class="frente__relogio__number" id="minutos"></span>
+                                        <span class="frente__relogio__number" id="segundos"></span>
+                                    </div>
+                                </div>
+                                <div data-tab-id="cronometro_aba" class="form-frent ">
+                                    <div class="frente__cronometro">
+                                        <div class="frente__cronometro__buttons">
+                                            <button class="frente__cronometro__buttons__button" onclick="iniciarCronometro()">Iniciar</button>
+                                            <button class="frente__cronometro__buttons__button" onclick="pararCronometro()">Parar</button>
+                                            <button class="frente__cronometro__buttons__button" onclick="resetarCronometro()">Reset</button>
+                                        </div>
+                                        <div class="frente__cronometro__relogio">
+                                            <span class="frente__cronometro__number" id="cronometro">00: 00: 00</span>
+                                            <span class="frente__cronometro__number__mile-segundos" id="mile-segundos">000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="back">
+                            <div class="back__container">
+                                <div class="back__title ">
+                                    <h2>Calcule quanto falta para seu aniversario.</h2>
+                                </div>
+                                <form id="form" class="form-atras">
+                                    <div class="form-atras__datas">
+                                        <div class="form-atras__data__numbers">
+                                            <label>Dia: </label>
+                                            <input class="form-atras__data__numbers__number" type="number" id="numero3" name="numero">
+                                        </div>
+                                        <div class="form-atras__data__numbers">
+                                            <label>Mes: </label>
+                                            <input class="form-atras__data__numbers__number" type="number" id="numero2" name="numero2">
+                                        </div>
+                                        <div class="form-atras__data__numbers">
+                                            <label>Ano: </label>
+                                            <input class="form-atras__data__numbers__number" type="number" id="numero" name="numero3">
+                                        </div>
+                                    </div>
+                                    <div class="form-atras__container">
+                                        <button class="form-atras__button" type="submit">Calcular</button>
+                                        <span class="form-atras__resultado" id="calcular"></span>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                </label>
+            </div>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
