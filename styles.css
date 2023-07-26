@@ -336,6 +336,10 @@ input:checked + .slider:before {
 
     /*AniverTime*/
 
+    .back__container {
+        margin-top: 0;
+    }
+
     .back__title {
         font-size: 1.3em;
     }
